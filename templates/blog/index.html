@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="pb-10 pt-0 blog-articles bg-color--primary-light--1" style="margin-top: 10%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-3 mb-lg-6">
+                    <article class="article sticky sticky--featured">
+                        <div class="card" style="display: flex; flex-direction: row; flex-wrap: nowrap;">
+                            <div class="card-body">
+                                <a href="#" class="article__title">
+                                    <h2>{{ last_article.title }}</h2>
+                                </a>
+                            </div>
+
+                            <div class="card-body">
+                                <div>
+                                    <img style="border-radius: 4%" src="{{ last_article.img.url }}" alt="">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12">
+                    <div class="row mb-5">
+                        {% for article in articles %}
+                            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                <article class="article">
+                                    <div class="card">
+                                        <div class="article__thumbnail">
+                                            <div class="article__thumbnail-image">
+                                                <img src="{{ article.img.url }}" alt="thumbnail"
+                                                     class="card-img-top background-image-holder">
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="#" class="article__title">
+                                                <h2>{{ article.title }}</h2>
+                                            </a>
+                                            <span class="article__date">{{ article.date_pub }}</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon.png' %}">
+    <title>{% block title %}Blog{% endblock %}</title>
+    <link href="{% static 'fonts/sfuidisplay.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/plugins.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+<body class="theme-royal-blue group-blog" data-spy="scroll" data-target="#navbar-nav" data-animation="false" data-appearance="light">
+    <main class="main">
+        <header class="navbar navbar-bg-white navbar-sticky sticky-bg-color--white navbar-expand-lg navbar-light box-shadow--1">
+            <div class="container position-relative">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img class="navbar-brand__regular" src="{% static 'img/Logo.png' %}" alt="brand-logo">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-inner">
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <nav>
+                        <ul class="navbar-nav" id="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'home' %}">Блог</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="mr-5 mr-lg-0">
+                    <a href="#" class="btn btn-size--md btn-hover--3d btn-bg--primary"><span class="btn__text">+ Добавить статью</span></a>
+                </div>
+            </div>
+        </header>
+        {% block content %}
+            Noting
+        {% endblock %}
+
+        <footer class="footer section--light bg-color--white position-relative hidden">
+            <div class="py-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <p class="font-size--15">© 2020 <a href="https://t.me/musaev42" class="text-color--400">By 42musaev</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
