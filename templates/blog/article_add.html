@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-    <section class="pb-10 pt-0 blog-articles bg-color--primary-light--1" style="й   margin-top: 10%; background: #fff;">
+    <section class="pb-10 pt-0 blog-articles bg-color--primary-light--1 mt-10" style="margin-top: 10%; background: #fff;">
         <div class="container">
             <div class="row mb-5">
                 <div class="mx-auto">
                     <div class="comment-respond">
                         <div>
-                            <form class="form" action="{% url 'add_article' %}" method="post" enctype="multipart/form-data">>
+                            <form class="form" action="{% url 'add_article' %}" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 {{ form.media }}
                                 <div class="form-group form-row">
