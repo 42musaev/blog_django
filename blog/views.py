@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from blog.models import Article
 
@@ -13,3 +13,8 @@ def home(request):
         'articles': articles,
         'last_article': last_article,
     })
+
+
+def detail(request, pk):
+    article = get_object_or_404(Article, pk=pk)
+    return render(request, 'blog/detail.html', {'article': article})

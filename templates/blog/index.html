@@ -8,18 +8,15 @@
                     <article class="article sticky sticky--featured">
                         <div class="card" style="display: flex; flex-direction: row; flex-wrap: nowrap;">
                             <div class="card-body">
-                                <a href="#" class="article__title">
+                                <a href="{{ last_article.get_absolute_url }}" class="article__title">
                                     <h2>{{ last_article.title }}</h2>
                                 </a>
                             </div>
-
                             <div class="card-body">
                                 <div>
                                     <img style="border-radius: 4%" src="{{ last_article.img.url }}" alt="">
                                 </div>
-
                             </div>
-
                         </div>
                     </article>
                 </div>
@@ -36,7 +33,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <a href="#" class="article__title">
+                                            <a href="{{ article.get_absolute_url }}" class="article__title">
                                                 <h2>{{ article.title }}</h2>
                                             </a>
                                             <span class="article__date">{{ article.date_pub }}</span>
@@ -45,7 +42,6 @@
                                 </article>
                             </div>
                         {% endfor %}
-
                     </div>
                 </div>
             </div>
