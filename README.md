@@ -1,1 +1,1 @@
-# Тестовое задание от kodland
+# Test job from kodland
